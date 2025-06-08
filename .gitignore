@@ -1,0 +1,16 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+crash.log
+terraform.tfvars # זה קריטי! לא להעלות פרטים רגישים לגיטהאב
+override.tf
+override.tf.json
+*tfvars
+.vscode/
+
+# Local .DS_Store files (macOS)
+.DS_Store
+
+# Any other local files you want to ignore
