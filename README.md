@@ -47,28 +47,26 @@
 
 ## 📦 מבנה הפרויקט
 
-הפרויקט מובנה בצורה מודולרית עבור קריאות טובה ויכולת שימוש חוזר:
-terraform-rds-lab/
-├── main.tf                 # קובץ root המרכז את קריאות המודולים.
-├── variables.tf            # משתנים גלובליים לפרויקט.
-├── outputs.tf              # פלטים גלובליים של הפרויקט.
-├── provider.tf             # הגדרות ספק AWS (Region).
-├── terraform.tfvars        # קובץ להגדרת ערכי משתנים רגישים (לא נכלל ב-Git!).
-├── .gitignore              # קובץ המגדיר אילו קבצים להתעלם מהם ב-Git.
-└── modules/
-├── vpc/                # מודול ליצירת VPC ומרכיביו.
+הפרויקט מובנה בצורה מודולרית עבור קריאות טובה ויכולת שימוש חוזר:terraform-rds-lab/
+├── main.tf                    # נקודת כניסה ראשית: מגדירה את המודולים ומחברת ביניהם.
+├── variables.tf               # הגדרות משתנים גלובליים לפרויקט (לדוגמה: project_name, db_engine).
+├── outputs.tf                 # פלטים חשובים מהפריסה (לדוגמה: VPC ID, RDS Endpoint).
+├── provider.tf                # הגדרות ספקית הענן (AWS) וה-Region.
+├── terraform.tfvars           # ⚠️ קובץ זה מכיל ערכים רגישים ולא יועלה ל-Git! (לדוגמה: db_username, db_password).
+├── .gitignore                 # קובץ המורה ל-Git להתעלם מקבצים ותיקיות מסוימים (state files, tfvars, etc.).
+└── modules/                   # ספריית מודולים לוגיים.
+├── vpc/                   # מודול ליצירת VPC, Subnets, Gateways ו-Route Tables.
 │   ├── main.tf
 │   ├── outputs.tf
 │   └── variables.tf
-├── db_subnet_group/    # מודול ליצירת DB Subnet Group.
+├── db_subnet_group/       # מודול ליצירת DB Subnet Group עבור RDS.
 │   ├── main.tf
 │   ├── outputs.tf
 │   └── variables.tf
-└── rds/                # מודול ליצירת RDS Instance ו-Security Group עבורו.
+└── rds/                   # מודול ליצירת RDS Instance ו-Security Group ייעודי.
 ├── main.tf
 ├── outputs.tf
 └── variables.tf
-
 
 
 ## 🛠️ דרישות קדם
