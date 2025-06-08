@@ -102,7 +102,7 @@ resource "aws_subnet" "public_1" {
 
   # availability_zone: מציין באיזה אזור זמינות התת-רשת תמוקם.
   # חשוב לפרוס תת-רשתות באזורי זמינות שונים עבור זמינות גבוהה.
-  availability_zone = var.az_a_name # אזור A
+  availability_zone = "us-west-2a" # אזור A
 
   # map_public_ip_on_launch: כאשר מופעל (true), כל מופע EC2
   # שיושק בתת-רשת זו יקבל כתובת IP ציבורית באופן אוטומטי.
@@ -122,7 +122,7 @@ resource "aws_subnet" "public_1" {
 resource "aws_subnet" "private_1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.private_subnet_1_cidr
-  availability_zone       = var.az_a_name # אזור A
+  availability_zone       = "us-west-2a" # אזור A
   map_public_ip_on_launch = false         # לא מקצים כתובת IP ציבורית אוטומטית.
 
   tags = {
@@ -137,7 +137,7 @@ resource "aws_subnet" "private_1" {
 resource "aws_subnet" "public_2" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.public_subnet_2_cidr
-  availability_zone       = var.az_b_name # אזור B
+  availability_zone       = "us-west-2b" # אזור B
   map_public_ip_on_launch = true
 
   tags = {
@@ -152,7 +152,7 @@ resource "aws_subnet" "public_2" {
 resource "aws_subnet" "private_2" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.private_subnet_2_cidr
-  availability_zone       = var.az_b_name # אזור B
+  availability_zone       = "us-west-2b" # אזור B
   map_public_ip_on_launch = false
 
   tags = {
