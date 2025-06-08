@@ -40,10 +40,7 @@
     * **Private Placement**: ממוקם רק בתת-רשתות פרטיות, ולא נגיש ציבורית.
     * מאובטח באמצעות **Security Group** ייעודי השולט בגישה לפורט DB.
 
-### 📊 דיאגרמה אדריכלית
 
-![AWS VPC and RDS Architecture Diagram](https://raw.githubusercontent.com/zivorimon/terraform-rds-lab/main/diagram.png)
-*(Example: Placeholder for an architectural diagram. You can create one using tools like Draw.io or Lucidchart and upload it to your repo, then link it here)*
 
 ## 📦 מבנה הפרויקט
 
