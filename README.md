@@ -1,7 +1,6 @@
 # 🚀 Terraform AWS VPC & RDS Lab: Infrastructure as Code Playground 🚀
 
-![AWS VPC Diagram](https://raw.githubusercontent.com/your-username/terraform-aws-vpc-rds-lab/main/diagram.png)
-*(Replace the URL above with a link to your actual diagram, once uploaded)*
+ 
 
 ---
 
